@@ -86,6 +86,7 @@ mutation {
 ```
 
 #### Step 4: According to assignment details fetch all data using following query
+Query
 ```txt
 query MyQuery {
   queryUser {
@@ -98,11 +99,93 @@ query MyQuery {
     name
   }
 }
+```
 
-
+Result
+```js
+{
+    "data": {
+        "queryUser": [
+            {
+                "cars": [
+                    {
+                        "id": 3,
+                        "name": "Amaze",
+                        "year": 2017
+                    },
+                    {
+                        "id": 4,
+                        "name": "Nexon",
+                        "year": 2021
+                    }
+                ],
+                "id": 3,
+                "name": "Devik"
+            },
+            {
+                "cars": [
+                    {
+                        "id": 1,
+                        "name": "X5",
+                        "year": 2018
+                    },
+                    {
+                        "id": 2,
+                        "name": "WRV",
+                        "year": 2020
+                    }
+                ],
+                "id": 1,
+                "name": "Ankit"
+            },
+            {
+                "cars": [
+                    {
+                        "id": 3,
+                        "name": "Amaze",
+                        "year": 2017
+                    }
+                ],
+                "id": 2,
+                "name": "Chandan"
+            }
+        ]
+    },
+    "extensions": {
+        "touched_uids": 32,
+        "tracing": {
+            "version": 1,
+            "startTime": "2021-12-20T06:56:58.195069061Z",
+            "endTime": "2021-12-20T06:56:58.198385069Z",
+            "duration": 3315991,
+            "execution": {
+                "resolvers": [
+                    {
+                        "path": [
+                            "queryUser"
+                        ],
+                        "parentType": "Query",
+                        "fieldName": "queryUser",
+                        "returnType": "[User]",
+                        "startOffset": 156214,
+                        "duration": 3153319,
+                        "dgraph": [
+                            {
+                                "label": "query",
+                                "startOffset": 234369,
+                                "duration": 3072743
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
+}
 ```
 
 #### Step 5: According to assignment details fetch some data using following query
+Query
 ```js
 query MyQuery {
   queryUser(filter: {name: {alloftext: "Ankit"}}) {
@@ -114,6 +197,62 @@ query MyQuery {
       year
     }
   }
+}
+```
+
+Result
+```js
+{
+    "data": {
+        "queryUser": [
+            {
+                "id": 1,
+                "name": "Ankit",
+                "cars": [
+                    {
+                        "id": 1,
+                        "name": "X5",
+                        "year": 2018
+                    },
+                    {
+                        "id": 2,
+                        "name": "WRV",
+                        "year": 2020
+                    }
+                ]
+            }
+        ]
+    },
+    "extensions": {
+        "touched_uids": 15,
+        "tracing": {
+            "version": 1,
+            "startTime": "2021-12-20T06:57:44.473722211Z",
+            "endTime": "2021-12-20T06:57:44.475399652Z",
+            "duration": 1677441,
+            "execution": {
+                "resolvers": [
+                    {
+                        "path": [
+                            "queryUser"
+                        ],
+                        "parentType": "Query",
+                        "fieldName": "queryUser",
+                        "returnType": "[User]",
+                        "startOffset": 135989,
+                        "duration": 1537020,
+                        "dgraph": [
+                            {
+                                "label": "query",
+                                "startOffset": 199833,
+                                "duration": 1471737
+                            }
+                        ]
+                    }
+                ]
+            }
+        }
+    }
 }
 ```
 
