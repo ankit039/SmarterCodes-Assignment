@@ -90,13 +90,13 @@ Query
 ```txt
 query MyQuery {
   queryUser {
+    id
+    name
     cars {
       id
       name
       year
     }
-    id
-    name
   }
 }
 ```
@@ -107,6 +107,8 @@ Result
     "data": {
         "queryUser": [
             {
+                "id": 3,
+                "name": "Devik",
                 "cars": [
                     {
                         "id": 3,
@@ -118,11 +120,11 @@ Result
                         "name": "Nexon",
                         "year": 2021
                     }
-                ],
-                "id": 3,
-                "name": "Devik"
+                ]
             },
             {
+                "id": 1,
+                "name": "Ankit",
                 "cars": [
                     {
                         "id": 1,
@@ -134,20 +136,18 @@ Result
                         "name": "WRV",
                         "year": 2020
                     }
-                ],
-                "id": 1,
-                "name": "Ankit"
+                ]
             },
             {
+                "id": 2,
+                "name": "Chandan",
                 "cars": [
                     {
                         "id": 3,
                         "name": "Amaze",
                         "year": 2017
                     }
-                ],
-                "id": 2,
-                "name": "Chandan"
+                ]
             }
         ]
     },
@@ -155,9 +155,9 @@ Result
         "touched_uids": 32,
         "tracing": {
             "version": 1,
-            "startTime": "2021-12-20T06:56:58.195069061Z",
-            "endTime": "2021-12-20T06:56:58.198385069Z",
-            "duration": 3315991,
+            "startTime": "2021-12-20T06:59:00.643916725Z",
+            "endTime": "2021-12-20T06:59:00.648140927Z",
+            "duration": 4224236,
             "execution": {
                 "resolvers": [
                     {
@@ -167,13 +167,13 @@ Result
                         "parentType": "Query",
                         "fieldName": "queryUser",
                         "returnType": "[User]",
-                        "startOffset": 156214,
-                        "duration": 3153319,
+                        "startOffset": 130047,
+                        "duration": 4083616,
                         "dgraph": [
                             {
                                 "label": "query",
-                                "startOffset": 234369,
-                                "duration": 3072743
+                                "startOffset": 190600,
+                                "duration": 4020134
                             }
                         ]
                     }
