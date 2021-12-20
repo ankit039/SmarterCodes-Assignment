@@ -1,7 +1,5 @@
 ## Smarter.codes Ankit Raj Assignment 1
 
-#### Step 1: Login into Dgrap and create a new free database 
-l## Smarter.codes Ankit Raj Assignment 1
 
 #### Step 1: Login into Dgrap
 * Create a new free database: By hitting lauch a new backend
