@@ -1,13 +1,13 @@
 ## Smarter.codes Ankit Raj Assignment 1
 
 
-#### Step 1: Login into Dgrap
+#### Operation 1: Login into Dgrap
 * Create a new free database: By hitting lauch a new backend
 * Name the database: CarDB
 * Follow further steps given below
 
 
-#### Step 2: According to assignment details create schema using below code
+#### Operation 2: According to assignment details create schema using below code
 ```js
 type User {
       id: Int!
@@ -29,7 +29,7 @@ type CarCompany {
 }
 ```
 
-#### Step 3: According to assignment details add some data using following mutation
+#### Operation 3: According to assignment details add some data using following mutation
 ```js
 mutation {
   addCarCompany(input: [
@@ -85,7 +85,7 @@ mutation {
 }
 ```
 
-#### Step 4: According to assignment details fetch all data using following query
+#### Operation 4: According to assignment details fetch all data using following query
 Query
 ```txt
 query MyQuery {
@@ -184,7 +184,7 @@ Result
 }
 ```
 
-#### Step 5: According to assignment details fetch some data using following query
+#### Operation 5: According to assignment details fetch some data using following query
 Query
 ```js
 query MyQuery {
@@ -256,3 +256,122 @@ Result
 }
 ```
 
+#### Operation 6: According to assignment details update age of name: "Ankit" data using following query
+Query
+```js
+mutation {
+  updateUser(input: {filter: {name: {alloftext: "Ankit"}}, set: {age: 21}}) {
+    numUids
+  }
+}
+```
+Result
+```js
+{
+  "data": {
+    "updateUser": {
+      "numUids": 1
+    }
+  },
+  "extensions": {
+    "touched_uids": 7,
+    "tracing": {
+      "version": 1,
+      "startTime": "2021-12-22T12:43:58.989502637Z",
+      "endTime": "2021-12-22T12:43:59.079030722Z",
+      "duration": 89528096,
+      "execution": {
+        "resolvers": [
+          {
+            "path": [
+              "updateUser"
+            ],
+            "parentType": "Mutation",
+            "fieldName": "updateUser",
+            "returnType": "UpdateUserPayload",
+            "startOffset": 174368,
+            "duration": 89349540,
+            "dgraph": [
+              {
+                "label": "preMutationQuery",
+                "startOffset": 0,
+                "duration": 0
+              },
+              {
+                "label": "mutation",
+                "startOffset": 230820,
+                "duration": 87491525
+              },
+              {
+                "label": "query",
+                "startOffset": 89510943,
+                "duration": 7631
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+```
+
+#### Operation 7: According to assignment details delete name: "Ankit" data using following query
+Query
+```js
+mutation {
+  deleteUser(filter:{name:{alloftext: "Ankit"}}) {
+    msg
+  }
+}
+```
+Result
+```js
+{
+  "data": {
+    "deleteUser": {
+      "msg": "Deleted"
+    }
+  },
+  "extensions": {
+    "touched_uids": 4,
+    "tracing": {
+      "version": 1,
+      "startTime": "2021-12-22T12:49:57.055077258Z",
+      "endTime": "2021-12-22T12:49:57.15924911Z",
+      "duration": 104171849,
+      "execution": {
+        "resolvers": [
+          {
+            "path": [
+              "deleteUser"
+            ],
+            "parentType": "Mutation",
+            "fieldName": "deleteUser",
+            "returnType": "DeleteUserPayload",
+            "startOffset": 171591,
+            "duration": 103994110,
+            "dgraph": [
+              {
+                "label": "preMutationQuery",
+                "startOffset": 0,
+                "duration": 0
+              },
+              {
+                "label": "mutation",
+                "startOffset": 218730,
+                "duration": 102514137
+              },
+              {
+                "label": "query",
+                "startOffset": 0,
+                "duration": 0
+              }
+            ]
+          }
+        ]
+      }
+    }
+  }
+}
+```
